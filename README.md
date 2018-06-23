@@ -15,3 +15,9 @@ Create the most beautiful and neat Bubbles with zero lines of code.
 <img height="500"  src="/Assets/Background3.png">
 </p>
 
+
+### 2. Chat Messages 
+<p align="center">
+<img height="500"  src="/Assets/Chat2.png">
+<img height="500"  src="/Assets/Chat3.png">
+</p>
