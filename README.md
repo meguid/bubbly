@@ -1,5 +1,6 @@
 # Bubbly
 Create the most beautiful and neat Bubbles with zero lines of code. 
++ Now Bubbly suppots UILabel/UIButton so you can create a beautiful text.
 
 <p align="center">
   <img src="/Assets/Logo.png">
@@ -20,4 +21,11 @@ Create the most beautiful and neat Bubbles with zero lines of code.
 <p align="center">
 <img height="500"  src="/Assets/Chat2.png">
 <img height="500"  src="/Assets/Chat3.png">
+</p>
+
+
+### 3. Gradient Text
+<p align="center">
+<img height="500"  src="/Assets/Text2.png">
+<img height="500"  src="/Assets/Text3.png">
 </p>
