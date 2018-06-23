@@ -24,7 +24,7 @@ Create the most beautiful and neat Bubbles with zero lines of code.
 </p>
 
 
-### 3. Gradient Text
+### 3. Gradient Text (Use subclasses "BubblyLabel" and "BubblyButton")
 <p align="center">
 <img height="500"  src="/Assets/Text.png">
 <img height="500"  src="/Assets/Text3.png">
