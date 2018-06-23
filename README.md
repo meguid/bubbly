@@ -12,20 +12,20 @@ Create the most beautiful and neat Bubbles with zero lines of code.
 
 ### 1. Neat Background 
 <p align="center">
-<img height="500"  src="/Assets/Background2.png">
+<img height="500"  src="/Assets/Background.png">
 <img height="500"  src="/Assets/Background3.png">
 </p>
 
 
 ### 2. Chat Messages 
 <p align="center">
-<img height="500"  src="/Assets/Chat2.png">
+<img height="500"  src="/Assets/Chat.png">
 <img height="500"  src="/Assets/Chat3.png">
 </p>
 
 
 ### 3. Gradient Text
 <p align="center">
-<img height="500"  src="/Assets/Text2.png">
+<img height="500"  src="/Assets/Text.png">
 <img height="500"  src="/Assets/Text3.png">
 </p>
