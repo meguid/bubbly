@@ -10,7 +10,7 @@ import UIKit
 
 class Bubbly: UIView {
     
-    var cornersArray: [Int] = [Int]()
+    var cornersArray: Set<Int> = []
     var gradientColors: [UIColor] = [UIColor]()
     var gradientStartPoint: [CGFloat] = [CGFloat()]
     var gradientEndPoint: [CGFloat] = [CGFloat()]
@@ -24,9 +24,32 @@ class Bubbly: UIView {
         set { cornersWidthValue = newValue }
     }
     
-    @IBInspectable var corners: String {
-        get { return cornersArray.map({$0.description}).joined(separator: " ") }
-        set( corners) { self.cornersArray = corners.components(separatedBy: " ").map({NumberFormatter().number(from: $0) as? Int ?? 0})}
+    @IBInspectable var leftUpCorner: Bool {
+        get { return cornersArray.contains(1) }
+        set( corner) {
+            updateCorners(state: corner, tag: 1)
+        }
+    }
+    
+    @IBInspectable var rightUpCorner: Bool {
+        get { return cornersArray.contains(2) }
+        set( corner) {
+            updateCorners(state: corner, tag: 2)
+        }
+    }
+    
+    @IBInspectable var leftDownCorner: Bool {
+        get { return cornersArray.contains(4) }
+        set( corner) {
+            updateCorners(state: corner, tag: 4)
+        }
+    }
+    
+    @IBInspectable var rightDownCorner: Bool {
+        get { return cornersArray.contains(8) }
+        set( corner) {
+            updateCorners(state: corner, tag: 8)
+        }
     }
     
     @IBInspectable var colors: String {
@@ -59,7 +82,18 @@ class Bubbly: UIView {
         self.updateUI()
     }
     
-    func roundCorner() {
+    private func updateUI() {
+        
+        if cornersArray.count > 0 {
+            roundCorner()
+        }
+        
+        if gradientColors.count > 0 {
+            gradient()
+        }
+    }
+    
+    private func roundCorner() {
         var rectCorner: UIRectCorner = UIRectCorner()
         for corner in cornersArray {
             rectCorner = rectCorner.union(UIRectCorner.init(rawValue: UInt(corner)))
@@ -72,7 +106,7 @@ class Bubbly: UIView {
         }
     }
     
-    func gradient() {
+    private func gradient() {
         gradientLayer?.removeFromSuperlayer()
         gradientLayer = layer.gradient(colors: gradientColors.map({$0.cgColor}),
                                        locations: [0, 1],
@@ -80,14 +114,11 @@ class Bubbly: UIView {
                                        endPoint: CGPoint(x: gradientEndPoint[0], y: gradientEndPoint[1]))
     }
     
-    func updateUI() {
-        
-        if cornersArray.count > 0 {
-            roundCorner()
-        }
-        
-        if gradientColors.count > 0 {
-            gradient()
+    private func updateCorners(state: Bool, tag: Int) {
+        if state {
+            self.cornersArray.insert(tag)
+        } else {
+            self.cornersArray.remove(tag)
         }
     }
 }
